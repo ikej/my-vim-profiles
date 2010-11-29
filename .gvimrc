@@ -10,8 +10,8 @@ filetype plugin indent on " Enable filetype-specific indenting and plugins
 set completeopt=longest,menu "关掉智能补全时的预览窗口
 let g:SuperTabRetainCompletionType=2
 let g:SuperTabDefaultCompletionType="<C-X><C-O>"
-set foldmethod=syntax
-set foldlevel=100 " 启动 vim 时不要自动折叠代码
+set foldmethod=manual
+"set foldlevel=1 " 启动 vim 时不要自动折叠代码
 nnoremap <silent> <F3> :Rgrep<CR>
   " Load matchit (% to bounce from do to end, etc.)
   runtime! macros/matchit.vim
@@ -115,6 +115,8 @@ map <C-a> ggVG
 map <F8> :tselect<cr>
 map <F9> :tnext<cr>
 imap <F2> <%= %><Esc>hhi
+map <C-F11> :mkview<cr>
+map <F11> :loadview<cr>
 
 "rvm info
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y%{exists('g:loaded_rvm')?rvm#statusline():''}%=%-16(\ %l,%c-%v\ %)%P
